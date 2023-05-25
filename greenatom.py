@@ -13,16 +13,13 @@ def check_list(list_with_values: list) -> list:
     """
     result = {}
     for element in list_with_values:
-        temprory = str(element)
-        if not temprory in result:
-            result[temprory] = element
+        temporary = str(element)
+        if not temporary in result:
+            result[temporary] = element
 
     return [value for value in result.values()]
-    
-list_with_values = [{"key1": "value1"}, {"k1": "v1", "k2": "v2", "k3": "v3"}, {}, {}, {"key1": "value1"}, {"key1": "value1"}, {"key2": "value2"}]
 
-def test_check_list():
+def test_check_list():    
+    list_with_values = [{"key1": "value1"}, {"k1": "v1", "k2": "v2", "k3": "v3"}, {}, {}, {"key1": "value1"}, {"key1": "value1"}, {"key2": "value2"}]
     expected_list = [{"key1": "value1"}, {"k1": "v1", "k2": "v2", "k3": "v3"}, {}, {"key2": "value2"}]
     assert check_list(list_with_values) == expected_list
-
-test_check_list()
